@@ -1,0 +1,33 @@
+﻿<Window x:Class="AudioSpectrum.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:AudioSpectrum"
+        x:Name="main"
+        Title="Wireless led" Height="200" Width="600" WindowStyle="ToolWindow" Topmost="{Binding ElementName=Alwaystp, Path=IsChecked}">
+    <Grid Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="107"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="28"/>
+            <RowDefinition Height="28"/>
+            <RowDefinition Height="75"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Device:" VerticalAlignment="Center" HorizontalAlignment="Center" Height="16" Margin="35,6,34,6" Width="38"/>
+        <ComboBox x:Name="DeviceBox" Grid.Row="1" VerticalAlignment="Center" Height="22" Margin="0,3"/>
+        <TextBlock Text="Light music:" Grid.Row="2" Grid.Column="0" VerticalAlignment="Top" HorizontalAlignment="Center" Height="16" Margin="19,0,25,0" Width="63"/>
+        <Button x:Name="BtnOn" Content="On" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="19,24,18,33" Click="BtnOn_Click" Height="18" Width="70"/>
+        <Button x:Name="BtnOff" Content="Off" Grid.Row="2" Grid.Column="0" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="19,0,18,6" Click="BtnOff_Click" Height="18" Width="70"/>
+        <TextBlock x:Name="SwitchText" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center" Height="16" Margin="53,72,54,26" Width="0" Grid.RowSpan="3"/>
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Grid.Column="1">
+            <TextBlock Text="L:" VerticalAlignment="Center" Margin="10,0"/>
+            <ProgressBar x:Name="PbL" Width="210" Height="15"/>
+            <TextBlock Text="R:" VerticalAlignment="Center" Margin="10,0"/>
+            <ProgressBar x:Name="PbR" Width="210" Height="15"/>
+        </StackPanel>
+        <TextBlock  x:Name="ResponseText" Grid.Row="3" Grid.Column="1" />
+        <CheckBox x:Name="Alwaystp" Content="Always on top" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,7,10,5" Grid.Row="4" IsChecked="True" Height="16" Width="95"/>
+    </Grid>
+</Window>
